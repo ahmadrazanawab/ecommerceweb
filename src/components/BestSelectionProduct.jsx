@@ -17,9 +17,9 @@ const BestSelectionProduct = () => {
         dispatch(addToCart(product));
         // alert("Product has been successfully Added");
         if (addToCart(product)) {
-            toast.success("Product has been successfully Added", {
+            toast.success("Product has been added successfully", {
                 position: "top-center",
-                autoClose: 5000,
+                autoClose: 2000,
                 hideProgressBar: false,
                 closeOnClick: true,
                 pauseOnHover: true,

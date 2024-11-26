@@ -14,15 +14,15 @@ const Cart = () => {
         console.log(removeItem(id));
         // alert("Product has been successfully removed");
         if (removeItem(id)) {
-            toast.error("Product has been successfully removed", {
+            toast.success("Product has been removed successfully", {
                 position: "top-center",
-                autoClose: 5000,
+                autoClose: 2000,
                 hideProgressBar: false,
                 closeOnClick: true,
                 pauseOnHover: true,
                 draggable: true,
                 progress: undefined,
-                theme: "dark",
+                theme: "light",
             })
         }
         else {
