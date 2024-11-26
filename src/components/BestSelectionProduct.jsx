@@ -4,15 +4,33 @@ import chair1 from '../assets/chair1.png'
 import chair2 from '../assets/chair2.png'
 import chair3 from '../assets/chair3.png'
 import chair4 from '../assets/chair4.png'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { ToastContainer, toast } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 
 const BestSelectionProduct = () => {
     const dispatch = useDispatch();
+    const { cproduct } = useSelector(state => state.cart);
 
     const handleAddToCart = (product) => {
         dispatch(addToCart(product));
-        alert("Product has been successfully Added");
+        // alert("Product has been successfully Added");
+        if (addToCart(product)) {
+            toast.success("Product has been successfully Added", {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+            })
+        }
+        else {
+            toast.error("Failed to submit form. Please try again.");
+        }
     }
     const ProductLists = [
         { id: 1, name: "Nova Visitor Chair", price: 100,Img:chair1 },
@@ -21,8 +39,9 @@ const BestSelectionProduct = () => {
         { id: 4, name: "Wooden Chair", price: 400,Img:chair4 },
     ]
   return (
-      <div className='bg-white sm:min-h-[50vh] sm:pt-28 pt-10 flex flex-col items-center py-10'>
+      <div className='bg-white sm:min-h-[50vh] sm:pt-28 pt-24 flex flex-col items-center py-10'>
           <h4 className='xl:text-5xl sm:text-4xl text-2xl font-serif sm:mb-10 mb-3'>Shop Best Our Collection</h4>
+          <ToastContainer />
           <div className='flex xl:justify-between sm:justify-center justify-center flex-wrap xl:flex-nowrap xl:mx-40 sm:mx-20 mx-4'>
               {
                   ProductLists.map((product) => {

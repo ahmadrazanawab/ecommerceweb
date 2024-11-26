@@ -2,14 +2,30 @@ import React from 'react'
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../redux/CartSlice';
 import { Link } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 
-const Product = ({ product }) => {
+const Product = ({ product}) => {
     const dispatch = useDispatch();
-    
     
     const handleAddToCart = () => {
         dispatch(addToCart(product));
-        alert("Product has been successfully Added");
+        // alert("Product has been successfully Added");
+        if (addToCart(product)) {
+            toast.success("Product has been successfully Added", {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+            })
+        }
+        else {
+            toast.error("Failed to submit form. Please try again.");
+        }
     }
   return (
     <div   className='flex justify-center'>

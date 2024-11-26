@@ -10,6 +10,7 @@ import chair7 from '../assets/chair7.png'
 import chair8 from '../assets/chair8.png'
 import sofa2 from '../assets/sofa2.png'
 import sofa3 from '../assets/sofa3.png'
+import { ToastContainer, toast } from 'react-toastify';
 
 
 
@@ -31,7 +32,8 @@ const ProductList = () => {
     return (
         <div className='pt-28 pb-2  bg-slate-50' >
         <h4 className="text-4xl flex justify-center bg-slate-[#ddd]  font-serif text-black underline">All Products</h4>
-        <div className='flex w-full justify-center flex-wrap bg-slate-50 '>
+            <div className='flex w-full justify-center flex-wrap bg-slate-50 '>
+            <ToastContainer />
           {
               products.map((product) => {
                   return <div key={product.id} className=''><Product product={product} /></div>

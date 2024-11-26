@@ -10,8 +10,8 @@ import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
-      <div id='home'>
-          <div className='pt-10'>
+      <div id='home' className=''>
+          <div className='pt-10 bg-[#ADD8E6]'>
               {/* <img src={headerImg} alt="NoHeader" className='h-[80vh] w-full ' /> */}
               <div className='xl:min-h-[100vh]  flex md:flex-row flex-col items-center  justify-between md:px-10 px-4  pt-10   bg-[#ADD8E6]'>
                   <div className='xl:ml-40 lg:ml-28 md:ml-2 flex flex-col ml-0 p-4'>
