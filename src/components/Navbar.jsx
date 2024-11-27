@@ -17,7 +17,7 @@ const Navbar = () => {
     ]
   return (
     <nav className="bg-[#ddd] fixed shadow-md py-4  md:py-0  w-full items-center   md:flex flex justify-between">
-          <Link to="/" className="text-2xl font-bold  text-gray-900 mb-1 mx-4">Shop</Link>
+          <Link to="/" className="text-2xl font-bold outline-none text-gray-900 hover:text-slate-500 ease-in duration-300 mb-1 mx-4">Shop</Link>
           <ul className={`md:flex  flex md:flex-row flex-col py-4 md:py-2 items-center md:static absolute md:mt-0 mt-9 w-full md:bg-[#ddd] bg-[#ddd] ${open ? 'top-9 opacity-100':'top-[-490px]'} `}>
               {
                   links.map((link) => {

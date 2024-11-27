@@ -12,7 +12,9 @@ import BestSelectionProduct from "./components/BestSelectionProduct";
 
 
 
+
 const App = () => {
+
     const router = createBrowserRouter([
         {
             path: '/',
@@ -24,7 +26,7 @@ const App = () => {
         },
         {
             path: '/product',
-            element: <> <Navbar/><ProductList/></>   
+            element: <> <Navbar /><ProductList  /></>   
         },
         {
             path: '/cart',

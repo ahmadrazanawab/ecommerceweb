@@ -25,7 +25,7 @@ const BestSelectionProduct = () => {
                 pauseOnHover: true,
                 draggable: true,
                 progress: undefined,
-                theme: "dark",
+                theme: "light",
             })
         }
         else {
@@ -49,7 +49,7 @@ const BestSelectionProduct = () => {
                           <img src={product.Img} alt="" className='sm:w-[300px]'/>
                           <h4 className='text-xl font-light text-gray-900 my-1'>{product.name}</h4>
                           <p>Price: {product.price}</p>
-                          <p>View Details</p>
+                          <Link to={`/product/${product.id}`}  className='underline font-bold my-1 text-sky-500 hover:text-sky-800 ease-in duration-300'>View Details</Link>
                           <div className='flex justify-between'>
                               <button onClick={()=>{handleAddToCart(product)}} className='bg-sky-500 border-[1px] text-white font-semibold my-1 border-sky-800 px-2 py-1 rounded'>AddToCart</button>
                               <Link to='/order' className='bg-sky-500 border-[1px] text-white font-semibold my-1 border-sky-800 px-2 py-1 rounded'>Buy Now</Link>

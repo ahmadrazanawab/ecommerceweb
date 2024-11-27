@@ -36,7 +36,7 @@ const ProductList = () => {
             <ToastContainer />
           {
               products.map((product) => {
-                  return <div key={product.id} className=''><Product product={product} /></div>
+                  return <div key={product.id} className=''><Product product={product}  /></div>
               })
           }
             </div>
